@@ -1,3 +1,17 @@
 spring:
   profiles:
     active: dev
+
+resilience4j.circuitbreaker:
+  registerHealthIndicator: true
+  failure-rate-threshold: 10
+  slow-call-duration-threshold: 500
+  slow-call-rate-threshold: 10
+  wait-duration-in-open-state: 30000
+  minimum-number-of-calls: 50
+  sliding-window-size: 100
+  permitted-number-of-calls-in-half-open-state: 30
+
+resilience4j.retry:
+  wait-duration: 100
+  max-attempts: 2
