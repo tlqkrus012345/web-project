@@ -14,11 +14,11 @@ public class WebClientUtil {
     private final WebClientConfig webClientConfig;
 
     public <T> T get(String url, Class<T> responseClass,
-                           String a, String b, String c, String d) {
+                           String externalId, String clientId, String externalSecret, String clientSecret) {
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add(a, b);
-        headers.add(c, d);
+        headers.add(externalId, clientId);
+        headers.add(externalSecret, clientSecret);
 
         return webClientConfig.webClient().method(HttpMethod.GET)
                 .uri(url)

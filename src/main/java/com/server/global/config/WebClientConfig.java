@@ -12,7 +12,7 @@ import reactor.netty.http.client.HttpClient;
 public class WebClientConfig {
     @Bean
     public WebClient webClient() {
-        HttpHeaders headers = new HttpHeaders();
+        //HttpHeaders headers = new HttpHeaders();
 
         HttpClient httpClient = HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000);
